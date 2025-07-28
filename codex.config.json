@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "name": "My Portfolio as Code",
+    "description": "Personal professional development tracking",
+    "author": "Your Name",
+    "created": "2025-01-28"
+  },
+  "content": {
+    "types": {
+      "learnings": {
+        "enabled": true,
+        "path": "content/learnings",
+        "yearlySubdirectories": true,
+        "requiredFields": ["title", "date", "tags"]
+      },
+      "achievements": {
+        "enabled": true,
+        "path": "content/achievements",
+        "yearlySubdirectories": true,
+        "requiredFields": ["title", "date", "tags"]
+      },
+      "blog": {
+        "enabled": true,
+        "path": "content/blog",
+        "subdirectories": ["published", "drafts"],
+        "requiredFields": ["title", "date", "published"]
+      },
+      "prompts": {
+        "enabled": true,
+        "path": "content/prompts",
+        "subdirectories": ["coding", "writing", "analysis"],
+        "requiredFields": ["title", "date"]
+      },
+      "reviews": {
+        "enabled": true,
+        "path": "content/reviews",
+        "yearlySubdirectories": true,
+        "requiredFields": ["title", "date", "period"]
+      }
+    }
+  },
+  "sync": {
+    "enabled": true,
+    "direction": "bidirectional",
+    "autoCommit": false
+  },
+  "integrations": {
+    "git": {
+      "enabled": true,
+      "repository": "your-username/your-portfolio-repo",
+      "branch": "main"
+    }
+  }
+}

@@ -1,0 +1,365 @@
+# Portfolio as Code .gitignore
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-workspace
+.sublime-project
+*.code-workspace
+
+# Node.js (if using Node-based tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+.yarn/
+package-lock.json
+yarn.lock
+
+# Python (if using Python tools)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build outputs and generated files
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.sass-cache/
+*.tgz
+*.tar.gz
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# Environment and configuration files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging
+.env.development
+.env.production
+
+# API keys and secrets (be extra careful)
+secrets.json
+config/secrets.json
+.secrets
+api-keys.txt
+credentials.json
+
+# Temporary files
+.tmp/
+temp/
+tmp/
+*.tmp
+*.temp
+.temporary/
+
+# Backup files
+*.bak
+*.backup
+*~
+.#*
+#*#
+
+# Archive files (unless intentionally versioned)
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# Large media files (consider using Git LFS instead)
+*.mov
+*.mp4
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+
+# Document drafts and work files
+~$*
+*.tmp
+.~lock.*
+
+# Portfolio-specific ignores
+
+# Generated exports (unless you want to version them)
+exports/
+portfolio.json
+portfolio.yaml
+portfolio.csv
+portfolio.html
+
+# Cache directories
+.cache/
+cache/
+.portfolio-cache/
+
+# Search index files (usually regenerated)
+search-index/
+.search/
+*.index
+
+# Sync status and temporary sync files
+.sync-status
+.sync-lock
+sync-conflicts/
+.codex-sync/
+
+# Analytics and metrics (usually generated)
+analytics/
+metrics/
+stats/
+
+# Test files and fixtures
+test-data/
+fixtures/
+mock-data/
+.test/
+
+# Drafts that are too early to commit
+content/drafts/private/
+content/ideas/
+*-draft-*
+*-wip-*
+
+# Personal notes that shouldn't be public
+content/personal/
+content/private/
+personal-notes/
+journal/
+diary/
+
+# Local configuration overrides
+codex.config.local.json
+config.local.json
+.local/
+local/
+
+# Backup directories
+backups/
+.backups/
+portfolio-backup-*/
+
+# Image optimization working files
+assets/images/.optimized/
+assets/images/originals/
+assets/images/cache/
+
+# Resume and portfolio generation output
+resume/
+cv/
+portfolio-site/
+generated/
+
+# Documentation build outputs
+docs/build/
+docs/_build/
+site/
+_site/
+
+# Static site generator files
+.jekyll-cache/
+.gatsby/
+.hugo/
+
+# Coverage reports
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# ESLint cache
+.eslintcache
+
+# Stylelint cache
+.stylelintcache
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env.test
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Vim files
+*.swp
+*.swo
+Session.vim
+
+# Local History for Visual Studio Code
+.history/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# CTags
+tags
+.tags
+tags.lock
+tags.temp
+
+# Ignore Mac DS_Store files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# Portfolio specific patterns
+# Uncomment the patterns below if they apply to your workflow
+
+# If you use AI-generated content that you want to review before committing
+# ai-generated/
+# auto-generated/
+
+# If you have sensitive company or client information
+# content/confidential/
+# content/work/
+# content/client-*/
+
+# If you want to keep certain learning notes private
+# content/learnings/*/private-*
+# content/learnings/*/company-*
+
+# If you generate a lot of temporary analysis files
+# analysis/
+# research/
+# scratch/
+
+# Generated resume files (if you don't want to version them)
+# *.pdf
+# *.docx
+# resume-*
+
+# If using automated screenshot tools
+# screenshots/
+# images/auto/
