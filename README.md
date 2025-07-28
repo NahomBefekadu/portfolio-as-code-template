@@ -263,6 +263,43 @@ portfolio-cli share-achievement --platform linkedin --latest
 4. **Regular Updates**: Capture learnings immediately while context is fresh
 5. **Quality Over Quantity**: Better to have fewer, well-documented items
 
+### 📝 Filename and Title Matching
+
+**Important**: For optimal sync performance with the Codex application, ensure your filenames match your content titles:
+
+- ✅ **Good**: Title "Advanced TypeScript Patterns" → File `advanced-typescript-patterns.md`
+- ❌ **Avoid**: Title "Advanced TypeScript Patterns" → File `random-name.md`
+
+**Naming Convention:**
+- Convert title to lowercase
+- Replace spaces with hyphens (`-`)
+- Remove special characters and punctuation
+- Keep only letters, numbers, and hyphens
+
+**Examples:**
+```bash
+# Learning examples
+"React Server Components Deep Dive" → react-server-components-deep-dive.md
+"Database Indexing Strategies" → database-indexing-strategies.md
+"TypeScript 5.0 Decorators" → typescript-50-decorators.md
+
+# Achievement examples
+"Launched Codex Portfolio App" → launched-codex-portfolio-app.md
+"Led Performance Task Force" → led-performance-task-force.md
+
+# Blog post examples
+"Building a Portfolio as Code" → building-a-portfolio-as-code.md
+"AI-Powered Code Reviews" → ai-powered-code-reviews.md
+```
+
+**Why This Matters:**
+- Prevents duplicate file creation during sync operations
+- Ensures consistent Git history tracking
+- Improves searchability and organization
+- Maintains predictable file paths for integrations
+
+💡 **Tip**: If you create files remotely in Git with non-matching names, the sync will still work but may create new files with standardized names during export operations.
+
 ### Git Workflow
 
 ```bash
@@ -289,6 +326,8 @@ git tag -a v2024.3 -m "Q3 2024 quarterly review complete"
 ## 🔧 Configuration
 
 ### codex.config.json
+
+> **Note**: The configuration below shows all available options for reference. For a simpler setup, start with just the basic fields (`version`, `metadata`, `sync`, and `content`) and add other sections as needed. Most integrations are disabled by default and can be enabled when you're ready to use them.
 
 ```json
 {
@@ -754,6 +793,54 @@ portfolio-cli audit --check-links --validate-frontmatter --suggest-tags
 # Writing analysis
 portfolio-cli writing-stats --readability --engagement --seo
 ```
+
+## 🔧 Troubleshooting
+
+### Common Sync Issues and Solutions
+
+**Blog Slug Validation Errors**
+- Error: `Unique constraint failed on the fields: (slug)`
+- Solution: Ensure blog post slugs are unique across all posts
+- Check: Review existing blog posts for duplicate slugs
+
+**Import Validation Failures**
+- Error: Content files failing to import during sync
+- Solution: Verify required frontmatter fields are present
+- Required: `title`, `date`, `type`, `id` (auto-generated if missing)
+
+**Duplicate File Creation**
+- Issue: Sync creates new files instead of updating existing ones
+- Solution: Ensure filename matches title (see naming conventions above)
+- Example: Title "My Learning" → File `my-learning.md`
+
+### ✅ Content Validation Checklist
+
+Before syncing, ensure your content meets these requirements:
+
+**All Content Types:**
+- [ ] Valid frontmatter with required fields
+- [ ] Filename matches title using kebab-case convention
+- [ ] Date in YYYY-MM-DD format
+- [ ] Content body is valid markdown
+
+**Blog Posts Specifically:**
+- [ ] Unique slug field (auto-generated from title if missing)
+- [ ] Summary field for better organization
+- [ ] publishedAt date if post is published
+
+**Learnings/Achievements:**
+- [ ] Descriptive tags for better categorization
+- [ ] Source information when applicable
+
+### 🛡️ Data Protection During Sync
+
+The bidirectional sync includes several safety mechanisms:
+
+- **Import-First Strategy**: Git changes are imported before database changes export
+- **Failure Protection**: Export is skipped if import fails, preventing data loss
+- **Change Detection**: Only modified content is processed to maintain performance
+- **Version History**: All changes are tracked with full audit trails
+- **Error Recovery**: Detailed error messages help identify and fix issues quickly
 
 ## 🤝 Community and Contributions
 
